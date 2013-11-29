@@ -4,10 +4,29 @@ echo -e "2. Galaxy S2 Plus (s2ve)"
 echo -e "3. Galaxy Grand Duos (baffin) \n\n"
 read device
 
+echo -e "\n\n Do you want to make clean? \n"
+echo -e "1. Yes"
+echo -e "2. No"
+read cle
+
+echo -e "\n\n Do you want to sync sources? \n"
+echo -e "1. Yes"
+echo -e "2. No"
+read syn
+
 res1=$(date +%s.%N)
 
-echo -e "\n\n Cleaning... \n\n"
-make clean
+if [ "cle" == "1" ]
+then
+	echo -e "\n\n Cleaning... \n\n"
+	make clean
+fi
+
+if [ "syn" == "1" ]
+then
+	echo -e "\n\n Syncing sources... \n\n"
+	repo sync
+fi
 
 echo -e "\n\n Setting up environment... \n\n"
 . build/envsetup.sh
