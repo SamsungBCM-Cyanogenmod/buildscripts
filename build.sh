@@ -16,13 +16,13 @@ read syn
 
 res1=$(date +%s.%N)
 
-if [ "cle" == "1" ]
+if [ "$cle" == "1" ]
 then
 	echo -e "\n\n Cleaning... \n\n"
 	make clean
 fi
 
-if [ "syn" == "1" ]
+if [ "$syn" == "1" ]
 then
 	echo -e "\n\n Syncing sources... \n\n"
 	repo sync
