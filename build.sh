@@ -73,5 +73,10 @@ then
 	brunch baffin
 fi
 
+if [ -e up.py ]
+then
+	./up.py
+fi
+
 res2=$(date +%s.%N)
 echo "Time elapsed: $(echo "($res2 - $res1) / 60"|bc ) minutes"
